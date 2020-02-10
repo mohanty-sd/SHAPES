@@ -1,6 +1,6 @@
 # SHAPES
 Codes and datasets for SHAPES (Swarm Heuristics based Adaptive and Penalized
- Estimation of Splines) adaptive spline fitting algorithm.
+ Estimation of Splines) adaptive spline one-dimensional curve fitting algorithm.
 
 This repository is under construction. Please contact the first author of the paper below if you would like to use the codes and/or datasets before this repository is completed.
 
