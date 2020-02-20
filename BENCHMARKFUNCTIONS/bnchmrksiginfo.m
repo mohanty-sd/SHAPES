@@ -7,7 +7,7 @@ function [sigType,sigIndx] = bnchmrksiginfo(sigSrlNum)
 %   1<= L <= 6 corresponds to the benchmark functions (f_1 to f_6) in
 %   Galvez, Iglesias, Comp. Aided Design (2012).
 %   7 <= L <= 10 corresponds to additional benchmark functions used in the
-%   CSDA 2019 paper.
+%   SHAPES paper.
 
 %Soumya D. Mohanty, May 2019
 
