@@ -2,11 +2,11 @@
 %Number of data realizations per signal
 nRlz = 10;
 %Signal serial numbers
-nSig = [1,10];
+nSig = [1,2,10];
 %Signal snr values
 snrVal = [10,100];
 %Number of samples for WGN padding at each end
-numPad = 2;
+numPad = [];
 
 %Path to the directory under which the directories containing simulated
 %data are to be created
