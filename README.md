@@ -8,7 +8,7 @@ This repository is under construction. Please contact the first author of the pa
 
 TODOs:
 
--[] Add data generation codes
--[] Add standalone PSO codes
--[] Add B-spline generation codes
--[] Add SHAPES codes
+- [ ] Add data generation codes
+- [ ] Add standalone PSO codes
+- [ ] Add B-spline generation codes
+- [ ] Add SHAPES codes
