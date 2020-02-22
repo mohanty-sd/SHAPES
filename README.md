@@ -8,7 +8,7 @@ This repository is **under construction**. Please contact the first author of th
 
 TODOs:
 
-- [ ] Add data generation codes
+- [x] Add data generation codes
 - [ ] Add standalone PSO codes
-- [ ] Add B-spline generation codes
+- [x] Add B-spline generation codes
 - [ ] Add SHAPES codes
