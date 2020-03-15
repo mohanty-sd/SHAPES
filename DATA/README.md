@@ -5,7 +5,7 @@ realizations containing the benchmark functions used in the [SHAPES paper](https
 
 **Note**: The term 'benchmark function' and 'benchmark signal', or just 'signal', are used interchangeably in both the paper as well as in the code documentation.
 
-Edit the [rungendataBFsig.m](./rungendataBFsig.m) script to generate data realizations containing the benchmark signals with specified signal to noise ratios (SNRs). 
+Edit the [test_gendataBFsig.m](./test_gendataBFsig.m) script to generate data realizations containing the benchmark signals with specified signal to noise ratios (SNRs). 
 
 * The benchmark functions are serially numbered in the paper from 1 to 10. 
 
