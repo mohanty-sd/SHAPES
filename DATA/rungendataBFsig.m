@@ -1,15 +1,16 @@
 %% Generate simulation data
-%Number of data realizations per signal
+%Number of data realizations per signal type and snr combination
 nRlz = 10;
-%Signal serial numbers
+%Signal types (see BNCHMRKSIGINFO)
 nSig = [1,2,10];
 %Signal snr values
 snrVal = [10,100];
-%Number of samples for WGN padding at each end
-numPad = [];
+%Number of samples for White Gaussian noise padding at each end
+numPad = []; %Use [] for default value (see GENDATABFSIG)
 
-%Path to the directory under which the directories containing simulated
-%data are to be created
+%Path to the folder under which sub-folders containing simulated data will
+%be created: Each sub-folder corresponds to one combination of (signal
+%serial number, snr) and contains the specified number (nRlz) of data files.
 simDataDir = 'TEMP';
 %Path to files containing the unit norm signal time series
 sigDir = '.';
