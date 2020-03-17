@@ -7,8 +7,11 @@ Soumya D. Mohanty and Ethan Fahnestock. "Adaptive spline fitting with particle s
 This repository is **under construction**. Please contact the first author of the paper if you would like to use the codes before this repository is completed.
 
 # INSTALLATION
+- Clone this repository.
 - Clone the repository containing Particle Swarm Optimization (PSO) codes: [SDMBIGDAT19](https://github.com/mohanty-sd/SDMBIGDAT19.git)
-- Edit the [pathset.m](./pathset.m) file in SHAPES to provide the path to the SDMBIGDAT19 directory in your local directory tree.
+- Edit the [pathset.m](./pathset.m) file in the SHAPES repository to provide the path to the SDMBIGDAT19 directory in your local directory tree.
+- Run the test_*.m codes in SHAPES / DATA folder to generate some simulated data.
+- Run the test_*.m codes in SHAPES to test your installation. 
 
 # Notes
 - The terms **breakpoints** and **knots** are used interchangeably in the codes and the documentation. 
