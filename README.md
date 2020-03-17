@@ -22,4 +22,4 @@ We have tried to alleviate this overlap as much as possible but isolated instanc
 - [x] Add data generation codes
 - [ ] Add standalone PSO codes
 - [x] Add B-spline generation codes
-- [ ] Add SHAPES codes
+- [x] Add SHAPES codes
