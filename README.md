@@ -27,6 +27,6 @@ We have tried to alleviate this overlap as much as possible but isolated instanc
 - [ ] Installation instructions
 - [ ] Test suite
 - [x] Add data generation codes
-- [ ] Add standalone PSO codes
+- [x] Add standalone PSO codes
 - [x] Add B-spline generation codes
 - [x] Add SHAPES codes
