@@ -13,6 +13,7 @@ The codes are in Matlab and have been tested under release 2019b.
 - Clone this repository (SHAPES).
 - Clone the repository containing Particle Swarm Optimization (PSO) codes: [SDMBIGDAT19](https://github.com/mohanty-sd/SDMBIGDAT19.git)
 - Edit the [pathset.m](./pathset.m) file in the SHAPES repository to provide the path to the SDMBIGDAT19 directory in your local directory tree.
+- Run pathset.m (required only once at the start of a Matlab session).
 - Run the test_*.m codes in SHAPES / DATA folder to generate some simulated data.
 - Run the test_*.m codes in SHAPES to test your installation. 
 
