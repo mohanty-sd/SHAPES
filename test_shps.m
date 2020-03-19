@@ -5,9 +5,9 @@
 inDataFile = fullfile('DATA','TEMP','GIBFsig2_WgnPad2_SNR100_DATA','inFile_1');
 
 %Regulator gain
-rGain = 2.0;
+rGain = 0.1;
 %Number of knots over which to perform model selection
-nKnts = [5,10];
+nKnts = [5,6,7,8,9,10,12,14,16,18];
 %Number of independent PSO runs
 nRuns = 4;
 %PSO parameters
@@ -32,11 +32,16 @@ params = struct('dataY',dataY,'dataX',dataX,...
 
 psoP = struct('nRuns',nRuns,...
              'psoParams',psoParams);
-         
+
+tic;
 [allResults,bestMdlResults] = shps(params, psoP);
+toc;
 
 figure;
-plot(dataX,dataY,'.');
+%Take care of padding
+strtIndx = numPad+1;
+endIndx = length(dataX)-numPad;
+plot(dataX(strtIndx:endIndx),dataY(strtIndx:endIndx),'.');
 hold on
-plot(dataX,bestMdlResults.bestModelSig);
+plot(dataX(strtIndx:endIndx),bestMdlResults.bestModelSig(strtIndx:endIndx));
 legend('Data','Signal','Estimate');
