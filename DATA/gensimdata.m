@@ -1,6 +1,6 @@
-function [] = gensimdatacrcb(nTrials,simDataDir,simParams)
+function [] = gensimdata(nTrials,simDataDir,simParams)
 %Light-weight simulation data generation function
-%GENSIMDATACRCB(N,D,P)
+%GENSIMDATA(N,D,P)
 %N is the number of data realizations. D is the name of the directory where
 %the data will be stored. Each realization is stored in a separate .mat
 %file named as 'inFile_<n>.mat' where 'n' is the realization number. P is a
@@ -14,10 +14,9 @@ function [] = gensimdatacrcb(nTrials,simDataDir,simParams)
 % 'numPad': Number of padding samples at the beginning and at
 %           the end of the signal time series. These samples will carry
 %           pure WGN. 
-%The simulation parameters are stored in a file called log.mat in D.
 
 %Soumya D. Mohanty, May 2018
-%May 2019: Modified to take parameter structure input and allow padding
+%Mar 2020: Adapted from CRCBOOKCODES / GENSIMDATACRCB
 
 load(simParams.sigFile);
 nSamples = length(unitnormsig);
@@ -32,4 +31,3 @@ for lpfiles = 1:nTrials
     save(dataFileName,'-struct','simParams');
     save(dataFileName,'dataX','dataY','-append');
 end
-save([simDataDir,filesep,'log'],'-struct','simParams');
