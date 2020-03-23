@@ -7,6 +7,10 @@ function [allResults,bestMdlResults] = shps(inParams, psoP)
 %input struct, P is the PSO parameter struct, and O is a struct containing
 %the output.
 %
+%NOTE: The random number generator on each parallel worker is reset to its
+%default state for every call to this function. Comment out the relevant
+%line ("rng(lpruns);") if this is not desired.
+%
 %The fields of I are:
 % 'dataX': vector of uniformly spaced predictor (i.e., independent variable) values.
 % 'dataY': vector of outcome (i.e., dependent variable) values.
