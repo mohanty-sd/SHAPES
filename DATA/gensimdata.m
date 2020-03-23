@@ -14,6 +14,10 @@ function [] = gensimdata(nTrials,simDataDir,simParams)
 % 'numPad': Number of padding samples at the beginning and at
 %           the end of the signal time series. These samples will carry
 %           pure WGN. 
+%
+%NOTE: The random number generator is initialized to its 'default' state
+%for every call to this function. Comment out the relevant line
+%("rng('default');") if this is not desired.
 
 %Soumya D. Mohanty, May 2018
 %Mar 2020: Adapted from CRCBOOKCODES / GENSIMDATACRCB
