@@ -2,7 +2,7 @@
 % SHPS runs the SHAPES algorithm on given data. 
 
 %Input data file (use DATA/test_gendataBFsig.m to generate simulated data first)
-inDataFile = fullfile('DATA','TEMP','GIBFsig2_WgnPad2_SNR100_DATA','inFile_1');
+inDataFile = fullfile('DATA','TEMP','inFile_1');
 
 %Regulator gain
 rGain = 0.1;
@@ -22,7 +22,8 @@ psoParams = struct(...
                'boundaryCond','',...
                'nbrhdSz',3);
 
-%% Do not change below
+%% 
+%-----------Do not change below---------------
 
 load(inDataFile);
 
