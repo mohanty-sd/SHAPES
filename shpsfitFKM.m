@@ -50,10 +50,10 @@ function [fitVal,varargout] = shpsfitFKM(xVec,params)
 fitVal = zeros(1,nVecs);
 
 %Check for out of bound coordinates and flag them
-validPts = chkstdsrchrng(xVec);
+validPts = crcbchkstdsrchrng(xVec);
 %Set fitness for invalid points to infty
 fitVal(~validPts)=inf;
-xVec(validPts,:) = s2rvector(xVec(validPts,:),params);
+xVec(validPts,:) = s2rv(xVec(validPts,:),params);
 
 %Data values
 dataX = params.dataX;
