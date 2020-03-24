@@ -7,7 +7,7 @@ intBrkPts = [0.2,0.3,0.301,0.4,0.5,0.5005,0.501,0.6];
 %Regulator gain
 rGain = 2.0;
 %Input data file (use DATA/test_gendataBFsig.m to generate simulated data first)
-inDataFile = fullfile('DATA','TEMP','GIBFsig2_WgnPad2_SNR100_DATA','inFile_1');
+inDataFile = fullfile('DATA','TEMP','inFile_1');
 
 %% Do not change below
 
