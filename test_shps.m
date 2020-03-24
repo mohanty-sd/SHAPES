@@ -45,4 +45,4 @@ endIndx = length(dataX)-numPad;
 plot(dataX(strtIndx:endIndx),dataY(strtIndx:endIndx),'.');
 hold on
 plot(dataX(strtIndx:endIndx),bestMdlResults.bestModelSig(strtIndx:endIndx));
-legend('Data','Signal','Estimate');
+legend('Data','Estimate');
