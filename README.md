@@ -15,7 +15,7 @@ The codes are in Matlab and have been tested under
 - Edit the [pathset.m](./pathset.m) file in the SHAPES repository to provide the path to the SDMBIGDAT19 directory in your local directory tree.
 - Run pathset.m (required only once at the start of a Matlab session). Alternatively, permanently add the paths to your Matlab search path list using addpath/savepath or through the GUI interface accessible from the "Set Path" button.
 - Enter the SHAPES / DATA folder and run the [test_gendataBFsig.m](./DATA/test_gendataBFsig.m) script to generate sample files containing simulated data.
-- Run the test_*.m scripts in the SHAPES folder to test your installation using the above data files. 
+- Return to the SHAPES folder and run the test_*.m scripts in the SHAPES folder to test your installation using the above data files. 
 ## Notes
 - Each test_*.m script also serves as an example of how to use the respective function.
 - In addition, each function has associated usage instructions that can be accessed using Matlab's "help" command.
