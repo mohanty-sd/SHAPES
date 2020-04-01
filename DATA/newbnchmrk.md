@@ -7,6 +7,4 @@ Let *V* be the array containing the benchmark function samples.
 - Normalize: *unitnormsig = V/norm(V)*
 - Sampling frequency: *fs* (set it to the appropriate value)
 - Create benchmark data file: *save(* my_benchmark_file, *'fs', 'unitnormsig')*
-
-Generate *N* data realizations.
-*gensimdata(*
+- Generate *N* data realizations: *gensimdata(*
