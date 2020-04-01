@@ -3,7 +3,7 @@ In addition to the benchmark function data files provided in this release of SHA
 [gensimdata.m](./DATA/gensimdata.m) to generate corresponding data realizations. The steps are explained below in 
 the form of Matlab commands (in italics).
 
-Let *V* be the array containing the benchmark function samples and let's say we want to generate data realizations where *V* is present with signal-to-noise ratio (SNR) of 100 in zero mean and unit variance iid normal noise (i.e., white Gaussian noise).
+Let *V* be the array containing the benchmark function samples and let's say we want to generate data realizations where *V* is present with signal-to-noise ratio (SNR) of 100 in i.i.d. Gaussian noise (mean zero and unit variance).
 - Normalize: *unitnormsig = V/norm(V)*
 - Sampling frequency: *fs* (set it to the appropriate value)
 - Create benchmark data file: *save(* my_benchmark_file, *'fs', 'unitnormsig')*
@@ -11,4 +11,4 @@ Let *V* be the array containing the benchmark function samples and let's say we 
 
 # Notes
 - In this release of SHAPES, predictor values are assumed to be spaced uniformly. Hence, a sampling frequency makes sense.
-- The number of samples added at each end are for stabilizing the coefficients of end B-splines (which are discontinuous). These should be removed once the estimate is obtained.
+- See more about the *numPad* parameter, which specifies the number of padded samples, [here](./README.md).
