@@ -7,3 +7,5 @@ Edit the [test_gendataBFsig.m](./test_gendataBFsig.m) script to generate data re
 * The benchmark functions are serially numbered in the paper from 1 to 10. 
 
 * Padding the data realizations with a small number of zero-mean white Gaussian noise samples at each end is recommended in general to get better function estimates at the data start and end points, especially for functions that do not smoothly go to zero at the boundaries. By default, the number of samples for padding is 2 at each end. These padded samples should be removed when post-processing the results of running SHAPES. Please see [test_shps.m](../test_shps.m) for an example of how padding is handled in post-processing.
+
+New benchmarks can be added, and associated data generated, following the instructions [here](./newbnchmrk.md). 
