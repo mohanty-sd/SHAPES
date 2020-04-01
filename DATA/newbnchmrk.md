@@ -11,4 +11,4 @@ Let *V* be the array containing the benchmark function samples and let's say we 
 
 # Notes
 - In this release of SHAPES, predictor values are assumed to be spaced uniformly. Hence, a sampling frequency makes sense.
-- See more about the *numPad* parameter, which specifies the number of padded samples, [here](./README.md).
+- The *numPad* parameter specifies the number of padded samples. Padding is discussed [here](./README.md).
