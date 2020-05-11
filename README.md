@@ -27,9 +27,6 @@ The codes are in Matlab and have been tested under
 -  The script [validate_Fig10.m](./validate_Fig10.m) reproduces the panel for benchmark function f_2 in Fig. 10 of the paper. Assuming that there are 4 parallel workers available, the runtime of this script is about 2.7 hours on a 3 GHz 8-Core Intel Xeon E5. This is because it generates and analyzes 1000 simulated data files.
 - Edit the 'nSig' variable in the above script to reproduce any one of the subpanels of Fig.10 and Fig.11 in the paper. Exact reproduction of the figures requires that resetting Matlab's default random number generator on your machine generates the same random stream as the one used in the paper. Otherwise, expect a statistically similar figure.
 
-# ISSUES
-- Predictor values must lie in the interval [0,1]. Workaround: Normalize your predictor (i.e., x-axis) values using x = (x-x(1))/(x(end)-x(1)) 
-
 # NOTES
 - The terms **breakpoints** and **knots** are used interchangeably in the codes and the documentation. 
 We have tried to alleviate this overlap as much as possible but isolated instances may occur.
