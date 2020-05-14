@@ -53,7 +53,6 @@ fitVal = zeros(1,nVecs);
 validPts = chkstdsrchrng(xVec);
 %Set fitness for invalid points to infty
 fitVal(~validPts)=inf;
-xVec(validPts,:) = s2rvector(xVec(validPts,:),params);
 
 %Data values
 dataX = params.dataX;
