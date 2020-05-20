@@ -4,6 +4,8 @@ Codes for the SHAPES (Swarm Heuristics based Adaptive and Penalized
  
 Soumya D. Mohanty and Ethan Fahnestock. "Adaptive spline fitting with particle swarm optimization." arXiv preprint [arXiv:1907.12160](https://arxiv.org/abs/1907.12160) (2019).
 
+[![View SHAPES on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/75564-shapes)
+
 # REQUIREMENTS
 The codes are in Matlab and have been tested under 
 - release 2019b+MAC OS (Catalina)
