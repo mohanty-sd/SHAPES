@@ -74,8 +74,8 @@ outputLvl = 0;
 dataX = inParams.dataX;
 dataY = inParams.dataY;
 nbrksVec = inParams.nBrks;
-rminVal = dataX(1);
-rmaxVal = dataX(end);
+rminVal = 0;%dataX(1);
+rmaxVal = 1;%dataX(end);
 rGain = inParams.rGain;
 
 nSamples = length(dataY);
