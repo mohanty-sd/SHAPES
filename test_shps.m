@@ -26,6 +26,7 @@ psoParams = struct(...
 %-----------Do not change below---------------
 
 load(inDataFile);
+%dataX = dataX*2+5;% For testing different ranges for the predictor
 
 % Parameters for SHPS
 params = struct('dataY',dataY,'dataX',dataX,...
