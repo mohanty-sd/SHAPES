@@ -11,11 +11,16 @@ function [allResults,bestMdlResults] = shps(inParams, psoP)
 %default state for every call to this function. Comment out the relevant
 %line ("rng(lpruns);") if this is not desired.
 %
-%The fields of I are:
+%The required fields of I are:
 % 'dataX': vector of uniformly spaced predictor (i.e., independent variable) values.
 % 'dataY': vector of outcome (i.e., dependent variable) values.
 % 'nBrks': vector of knot numbers to use in model selection.
 % 'rGain' : regulator gain
+%
+%The optional fields of I are:
+% 'padL','padR': vectors that are prepended and appended, respecitvely, to 
+%                'dataY'. Leave either one out to invoke their default value of
+%                [-0.5,0.5].
 %
 %The struct P contains settings for PSO and number of independent PSO
 %runs. The fields of P are as follows.
@@ -71,8 +76,28 @@ nRuns = psoP.nRuns;
 psoParams = psoP.psoParams;
 outputLvl = 0;
 
-dataX = inParams.dataX;
-dataY = inParams.dataY;
+%Default padding
+padL = [-0.5,0.5];
+padR = [-0.5,0.5];
+if isfield(inParams,'padL')
+    padL = inParams.padL;
+end
+if isfield(inParams,'padR')
+    padR = inParams.padR;
+end
+numPadL = length(padL);
+numPadR = length(padR);
+
+strtX = inParams.dataX(1);
+endX = inParams.dataX(end);
+lSmpIntrvl = inParams.dataX(2)-inParams.dataX(1);
+rSmpIntrvl = inParams.dataX(end)-inParams.dataX(end-1);
+dataX = [strtX-(numPadL:-1:1)*lSmpIntrvl,...
+         inParams.dataX(:)',...
+         endX+(1:numPadR)*rSmpIntrvl];
+dataY = [padL,...
+         inParams.dataY(:)',...
+         padR];
 nbrksVec = inParams.nBrks;
 rminVal = 0;%dataX(1);
 rmaxVal = 1;%dataX(end);
@@ -149,7 +174,8 @@ for lpbrks = 1:length(nbrksVec)
         allResults(lpbrks).allRunsOutput(lpruns).fitVal = fitVal(lpruns);
         allResults(lpbrks).allRunsOutput(lpruns).brkPts = brkPts(lpruns,:);
         allResults(lpbrks).allRunsOutput(lpruns).bsplCoeffs = bsplCoeffs(lpruns,:);
-        allResults(lpbrks).allRunsOutput(lpruns).estSig = estSig(lpruns,:);
+        %Remove padding
+        allResults(lpbrks).allRunsOutput(lpruns).estSig = estSig(lpruns,(numPadL+1):(end-numPadR));
         allResults(lpbrks).allRunsOutput(lpruns).totalFuncEvals = outStruct(lpruns).totalFuncEvals;
         allResults(lpbrks).allRunsOutput(lpruns).mltplct = mltplct(lpruns,:);
     end
