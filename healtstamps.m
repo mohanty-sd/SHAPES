@@ -19,6 +19,11 @@ if nargin > 4
 end
 %Healing is not possible if there is insufficient space between the ends
 if (length(ckTVals)+1)*minGapTime > tmax-tmin
+    disp(['Length of input time stamps series: ', num2str(length(ckTVals))]);
+    disp(['Minimum gap: ',num2str(minGapTime)]);
+    disp(['Start time: ', num2str(tmin)]);
+    disp(['End time: ',num2str(tmax)]);
+    disp(['Size of violation: ',num2str((length(ckTVals)+1)*minGapTime-(tmax-tmin))]);
     error('Bad minimum gap');
 end
 
