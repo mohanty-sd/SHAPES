@@ -5,8 +5,6 @@ nRlz = 10;
 nSig = 1;
 %Signal snr 
 snrVal = 100;
-%Number of samples for White Gaussian noise padding at each end
-numPad = []; %Use [] for default value (see GENDATABFSIG)
 
 %Path to the folder in which to create the data files
 simDataDir = 'TEMP';
@@ -16,4 +14,4 @@ sigDir = '.';
 mkdir(simDataDir);
 
 %------DO NOT CHANGE BELOW-------------
-gendataBFsig(nRlz,nSig,snrVal,simDataDir,sigDir,numPad);
+gendataBFsig(nRlz,nSig,snrVal,simDataDir,sigDir);

@@ -11,9 +11,6 @@ function [] = gensimdata(nTrials,simDataDir,simParams)
 %            with the sampling frequency. The length of each data
 %            realization is the length of the signal plus any padding at
 %            the two ends.
-% 'numPad': Number of padding samples at the beginning and at
-%           the end of the signal time series. These samples will carry
-%           pure WGN. 
 %
 %NOTE: The random number generator is initialized to its 'default' state
 %for every call to this function. Comment out the relevant line
@@ -21,16 +18,17 @@ function [] = gensimdata(nTrials,simDataDir,simParams)
 
 %Soumya D. Mohanty, May 2018
 %Mar 2020: Adapted from CRCBOOKCODES / GENSIMDATACRCB
+%Dec 2020: Removed padding
+
 
 load(simParams.sigFile);
 nSamples = length(unitnormsig);
-nSamples = nSamples + 2*simParams.numPad;
 dataX = (0:(nSamples-1))/fs;
 
 rng('default');
 for lpfiles = 1:nTrials
-    dataY = [zeros(1,simParams.numPad),simParams.snr*unitnormsig,zeros(1,simParams.numPad)];
-    dataY = dataY + +randn(1,nSamples);
+    dataY = simParams.snr*unitnormsig;
+    dataY = dataY + randn(1,nSamples);
     dataFileName = [simDataDir,filesep,'inFile_',num2str(lpfiles)];
     save(dataFileName,'-struct','simParams');
     save(dataFileName,'dataX','dataY','-append');

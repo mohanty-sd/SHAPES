@@ -16,15 +16,10 @@ function [] = gendataBFsig(nRlz,nSig,snrVal,varargin)
 %GENDATABFSIG(N,Nsig,SNR,D,S)
 %S is the path to folder containing the benchmark signal files. Set S to ''
 %to invoke its default value, which is the current working directory.
-%
-%GENDATABFSIG(N,Nsig,SNR,D,S,P)
-%P is The number of WGN samples to pad the data with at each end. This
-%padding helps in signal estimation when the signal doe not terminate
-%smoothly at zero. The padding should be taken into account during
-%post-processing. Set to [] to invoke the default value of 2.
 
 %Soumya D. Mohanty, May 2019
 %Mar 2020: Modified for simplicity of usage
+%Dec 2020: Removed padding
 
 countOptargs = 1;
 simDataDir = '.';
@@ -41,17 +36,19 @@ if nargin > 4
     end
 end    
 countOptargs = countOptargs+1;
-numPad = 2;
-if nargin > 5
-    if ~isempty(varargin{countOptargs})
-        numPad = varargin{countOptargs};
-    end
-end   
+% numPad = 2;
+% if nargin > 5
+%     if ~isempty(varargin{countOptargs})
+%         numPad = varargin{countOptargs};
+%     end
+% end   
 
 %Construct input parameter struct for GENSIMDATA
+% inParams = struct('snr',snrVal,...
+%                    'sigFile','',...
+%                    'numPad',numPad);
 inParams = struct('snr',snrVal,...
-                   'sigFile','',...
-                   'numPad',numPad);
+                   'sigFile','');
 %Resolve benchmark function from its serial number
 [sigType,sigIndx] = bnchmrksiginfo(nSig);
 inParams.sigFile = [sigDir,filesep,sigType,num2str(sigIndx)];
