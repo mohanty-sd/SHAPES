@@ -7,7 +7,7 @@ Let *V* be the array containing the benchmark function samples and let's say we 
 - Normalize: *unitnormsig = V/norm(V)*
 - Sampling frequency: *fs* (set it to the appropriate value)
 - Create benchmark data file: *save(* my_benchmark_file, *'fs', 'unitnormsig')*
-- Generate *N* data realization: *gensimdata(N,* folder_for_data_files, *struct('snr',100,'sigFile',* my_benchmark_file,*'numPad',2))*
+- Generate *N* data realizations: *gensimdata(N,* folder_for_data_files, *struct('snr',100,'sigFile',* my_benchmark_file,*'numPad',2))*
 
 # Notes
 - In this release of SHAPES, predictor values are assumed to be spaced uniformly. Hence, a sampling frequency makes sense.
