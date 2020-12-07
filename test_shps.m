@@ -40,10 +40,7 @@ tic;
 toc;
 
 figure;
-%Take care of padding
-strtIndx = numPad+1;
-endIndx = length(dataX)-numPad;
-plot(dataX(strtIndx:endIndx),dataY(strtIndx:endIndx),'.');
+plot(dataX,dataY,'.');
 hold on
-plot(dataX(strtIndx:endIndx),bestMdlResults.bestModelSig(strtIndx:endIndx));
+plot(dataX,bestMdlResults.bestModelSig);
 legend('Data','Estimate');
