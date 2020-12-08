@@ -35,18 +35,8 @@ if nargin > 4
         sigDir = varargin{countOptargs};
     end
 end    
-countOptargs = countOptargs+1;
-% numPad = 2;
-% if nargin > 5
-%     if ~isempty(varargin{countOptargs})
-%         numPad = varargin{countOptargs};
-%     end
-% end   
 
 %Construct input parameter struct for GENSIMDATA
-% inParams = struct('snr',snrVal,...
-%                    'sigFile','',...
-%                    'numPad',numPad);
 inParams = struct('snr',snrVal,...
                    'sigFile','');
 %Resolve benchmark function from its serial number

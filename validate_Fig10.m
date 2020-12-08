@@ -44,7 +44,7 @@ mkdir(simDataDir);
 mkdir(resultsDir);
 
 %Generate data realizations (see test_gendataBFsig.m and the help for
-%gendataBFsig.m for usage details) using default padding
+%gendataBFsig.m for usage details)
 gendataBFsig(nRlz,nSig,snrVal,simDataDir,sigDir);
 preAllocInfo = load(fullfile(simDataDir,'inFile_1'),'dataX');
 nSmpls = length(preAllocInfo.dataX);
@@ -95,16 +95,12 @@ inFileName = fullfile(simDataDir,'inFile_1');
 inFileInfo = load(inFileName,'dataX', 'dataY');
 dataX = inFileInfo.dataX;
 dataY = inFileInfo.dataY;
-%Take care of padding
-numPad = 2;
-strtIndx = numPad+1;
-endIndx = length(dataX)-numPad;
 
 figure;
-plot(dataX(strtIndx:endIndx),dataY(strtIndx:endIndx),'.');
+plot(dataX,dataY,'.');
 hold on;
-plot(dataX(strtIndx:endIndx),meanSig(strtIndx:endIndx));
+plot(dataX,meanSig);
 %+/- 2*sigma error 
-plot(dataX(strtIndx:endIndx),meanSig(strtIndx:endIndx)-2*stdSig(strtIndx:endIndx));
-plot(dataX(strtIndx:endIndx),meanSig(strtIndx:endIndx)+2*stdSig(strtIndx:endIndx));
+plot(dataX,meanSig-2*stdSig);
+plot(dataX,meanSig+2*stdSig);
 axis tight;
