@@ -29,7 +29,8 @@ function [allResults,bestMdlResults] = shps(inParams, psoP)
 %             parallelize over the runs. Use parpool(numWorkers) to set the
 %             default number of parallel workers.
 %   'psoParams' : The PSO parameter structure. See the help for
-%                 SDMBIGDAT19/CODES/crcbpso.m
+%                 SDMBIGDAT19/CODES/crcbpso.m. Set to [] to invoke the
+%                 default parameter values.
 %
 %O is a struct array with the following field. Each element of O
 %corresponds to one model (i.e., one number of knots).
